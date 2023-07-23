@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(recipesRoutes)
-app.use(categoriesRoutes)
+app.use("/v1", recipesRoutes)
+app.use("/v1", categoriesRoutes)
 
 export default app;

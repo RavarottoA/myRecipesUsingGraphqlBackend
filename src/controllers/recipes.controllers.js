@@ -1,8 +1,9 @@
 import { Recipe } from '../models/Recipe.js';
+import { getRecipesService } from '../services/getRecipes.js';
 
 export const getRecipes = async (req, res) => {
     try {
-        const recipes = await Recipe.findAll();
+        const recipes = await getRecipesService();
         res.json(recipes);
     } catch (error) {
         return res.status(500).json({message: error.message});
@@ -51,7 +52,6 @@ export const updateRecipe = async (req, res) => {
 
 export const deleteRecipe = async (req, res) => {
     const { id } = req.body;
-    console.log("iDDDD: ", id)
     try {
         const result = await Recipe.destroy({
             where: {id},
