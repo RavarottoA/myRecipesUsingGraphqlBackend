@@ -1,11 +1,13 @@
 import app from './app.js';
 import morgan from 'morgan';
 import {sequelize} from './database/database.js';
-import router from './routes/recipes.routes.js';
+import recipesRouter from './routes/recipes.routes.js';
+import usersRouter from './routes/users.routes.js';
 
 app.use(morgan('dev'));
 
-app.use(router);
+app.use(recipesRouter);
+app.use(usersRouter);
 
 async function main() {
     try {
