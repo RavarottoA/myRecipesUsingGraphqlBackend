@@ -9,12 +9,6 @@ export const Users = sequelize.define(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: DataTypes.STRING
-        },
-        surname: {
-            type: DataTypes.STRING
-        },
         email: {
             type: DataTypes.STRING //has to be unique
         },

@@ -1,0 +1,17 @@
+type Query {
+    userEmail(email: String!): UserEmail,
+    recipes: [Recipe]
+}
+
+type UserEmail {
+    email: String
+    id: Int
+}
+
+type Recipe {
+    id: Int
+    title: String
+    ingredients: String
+    description: String
+    catergoryId: Int
+}
